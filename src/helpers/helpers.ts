@@ -9,7 +9,7 @@ export const isSuccessful = (response: any, message: string, res: Response) => {
 };
 export const isBadRequest = (response: any, message: string, res: Response) => {
   res.status(400).json({
-    data: response,
+    data: response || null,
     status: 400,
     error: true,
     message: message,

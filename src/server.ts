@@ -1,10 +1,12 @@
 import { config } from './config/config';
 import express, { Request, Response } from 'express';
 const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
 const mongoose = require('mongoose');
 
 const app = express();
-
+const cors = require('cors');
+app.use(cors());
 mongoose
   .connect(config.db.url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -25,3 +27,4 @@ app.get('/', (req: Request, res: Response) => {
   });
 });
 app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);

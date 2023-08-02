@@ -10,6 +10,11 @@ const userSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
   },
+  password: {
+    type: String,
+    required: [true, 'Please enter a password'],
+    minlength: [6, 'Minimum password length is 6 characters'],
+  },
   created_at: {
     type: Date,
     default: Date.now,
