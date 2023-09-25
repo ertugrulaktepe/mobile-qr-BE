@@ -19,5 +19,9 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  qr_id: {
+    type: String,
+    default: null,
+  },
 });
-module.exports = mongoose.model('User', userSchema);
+export const userModel = mongoose.model('User', userSchema);

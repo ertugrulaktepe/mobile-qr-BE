@@ -1,4 +1,4 @@
-import { Response } from 'express';
+import { Response } from "express";
 export const isSuccessful = (response: any, message: string, res: Response) => {
   res.status(200).json({
     data: response,
@@ -23,7 +23,11 @@ export const isNotFound = (response: any, message: string, res: Response) => {
     message: message,
   });
 };
-export const isServerError = (response: any, message: string, res: Response) => {
+export const isServerError = (
+  response: any,
+  message: string,
+  res: Response,
+) => {
   res.status(500).json({
     data: response,
     status: 500,
@@ -39,7 +43,11 @@ export const isCreated = (response: any, message: string, res: Response) => {
     message: message,
   });
 };
-export const isUnauthorized = (response: any, message: string, res: Response) => {
+export const isUnauthorized = (
+  response: any,
+  message: string,
+  res: Response,
+) => {
   res.status(401).json({
     data: response,
     status: 401,
