@@ -12,6 +12,15 @@ const cors = require('cors');
 
 app.use(cors());
 
+mongoose
+  .connect(config.db.url)
+  .then(() => {
+    console.log('DB Connected');
+  })
+  .catch((err: any) => {
+    console.log(`DB Connection Error: ${err.message}`);
+  });
+
 app.listen(config.port, () => {
   console.log(`server run on port ${config.port}`);
 });
